@@ -1,9 +1,7 @@
 
-import particlesConfig from './config/particles-config';
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
-    type Container,
     type ISourceOptions
 } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
@@ -41,7 +39,7 @@ const Background = () => {
     }, []);
 
 
-    const particlesLoaded = async (container?: Container): Promise<void> => {
+    const particlesLoaded = async (): Promise<void> => {
         console.log(document.body.classList.contains('dark'));
         if (darkMode === true) {
             setBgColor('#000000')

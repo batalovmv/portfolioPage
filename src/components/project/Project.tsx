@@ -1,7 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import './style.css';
-
-const Project = ({ title, img, index }) => {
+type ProjectProp={
+    title:string;
+    img:any;
+    index:number
+}
+const Project = ({ title, img, index }: ProjectProp) => {
 	return (
 		<NavLink to={`/project/${index}`}>
 			<li className="project">

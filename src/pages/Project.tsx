@@ -1,10 +1,21 @@
 import {useParams} from "react-router-dom";
 import BtnGitHub from "../components/btnGitHub/BtnGitHub";
 import {projects} from "../helpers/projectsList"
+interface Project {
+  title: string;
+  imgBig: string;
+  skills: string;
+  gitHubLink?: string;
+}
 
 const Project = () => {
-	const {id} = useParams();
-	const project = projects[id];
+    const { id } = useParams<{ id: string }>();
+    const index = id ? parseInt(id, 10) : NaN;
+    const project = !isNaN(index) ? projects[index] : null;
+
+    if (!project) {
+        return <div>Проект не найден</div>;
+    }
 
     return (
 		<main className="section">
