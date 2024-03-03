@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main
+      - main  # Или имя вашей ветки, например master
 
 jobs:
   build-and-deploy:
@@ -12,41 +12,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build and push Docker image
-        run: |
-          docker build -t main-page:latest .
-          docker save main-page:latest | gzip > main-page.tar.gz
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'  # Укажите версию Node.js, которая подходит для вашего проекта
 
-      - name: Transfer Docker image to server
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build  # Или ваша команда для сборки проекта с Vite
+
+      - name: Deploy to Server
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: "main-page.tar.gz"
-          target: "/tmp/main-page.tar.gz"
-
-      - name: Debug Docker load
-        uses: appleboy/ssh-action@master
-        with:
-            host: ${{ secrets.SSH_HOST }}
-            username: ${{ secrets.SSH_USERNAME }}
-            key: ${{ secrets.SSH_PRIVATE_KEY }}
-            port: ${{ secrets.SSH_PORT }}
-            script: |
-              ls -la /tmp/
-              cat /tmp/main-page.tar.gz | gunzip | docker load
-              docker images
-      - name: Load and run Docker image on server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            sudo docker load < /tmp/main-page.tar.gz
-            sudo docker stop main-page || true
-            sudo docker rm main-page || true
-            sudo docker run --name main-page -d -p 81:80 main-page:latest
+          source: "dist/*"  
+          target: "/root/main-page"  # Путь на удаленном сервере
+      
