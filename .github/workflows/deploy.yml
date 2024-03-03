@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main  # Или имя вашей ветки, например master
+      - main
 
 jobs:
   build-and-deploy:
@@ -12,24 +12,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'  # Укажите версию Node.js, которая подходит для вашего проекта
+      - name: Build and push Docker image
+        run: |
+          docker build -t main-page:latest .
+          docker save main-page:latest | gzip > main-page.tar.gz
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build  # Или ваша команда для сборки проекта с Vite
-
-      - name: Deploy to Server
+      - name: Transfer Docker image to server
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: "dist/*"  
-          target: "/root/mainPage"  # Путь на удаленном сервере
-      
+          source: "main-page.tar.gz"
+          target: "/root/main-page/main-page.tar.gz"
+
+      - name: Load and run Docker image on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            docker load < /root/main-page/main-page.tar.gz
+            docker stop main-page || true
+            docker rm main-page || true
+            docker run --name main-page -d -p 81:80 main-page:latest
