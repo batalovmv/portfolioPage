@@ -35,7 +35,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            docker load < /root/main-page/main-page.tar.gz
+            docker load < /***/main-page/main-page.tar.gz
             docker stop main-page || true
             docker rm main-page || true
             docker run --name main-page -d -p 81:80 main-page:latest
