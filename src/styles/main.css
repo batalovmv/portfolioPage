@@ -8,7 +8,8 @@
 	--black-border: #26292d;
 	--white: #fff;
 	--purple: #5c62ec;
-
+    --header-bg: rgba(0, 0, 0, 0);
+       
 	/* Nav */
 	--nav-bg: var(--black);
 	--nav-border: var(--black-border);

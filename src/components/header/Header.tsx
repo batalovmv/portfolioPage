@@ -1,9 +1,13 @@
 import "./style.css";
-
+import Background from "./background";
 const Header = () => {
+   
+    
     return (
 		<header className="header">
+            <Background/>
 			<div className="header__wrapper">
+                
 				<h1 className="header__title">
 					<strong>
 						Привет, мое имя <em>Михаил</em>

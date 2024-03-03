@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import {useLocalStorage} from "../../utils/useLocalStorage"
 import detectDarkMode from '../../utils/detectDarkMode';
 
 import sun from './sun.svg';
 import moon from './moon.svg';
 import './style.css';
+import { useLocalStorage } from '../../utils/useLocalStorage';
 
 const BtnDarkMode = () => {
     const [darkMode, setDarkMode] = useLocalStorage('darkMode', detectDarkMode());
@@ -14,6 +14,7 @@ const BtnDarkMode = () => {
 			document.body.classList.add('dark');
 		} else {
 			document.body.classList.remove('dark');
+
 		}
 	}, [darkMode]);
 
