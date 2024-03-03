@@ -27,7 +27,7 @@ jobs:
           source: "main-page.tar.gz"
           target: "/tmp/main-page.tar.gz"
 
-      - name: Debug Docker and List Images
+      - name: Debug Docker load
         uses: appleboy/ssh-action@master
         with:
             host: ${{ secrets.SSH_HOST }}
@@ -35,8 +35,9 @@ jobs:
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             port: ${{ secrets.SSH_PORT }}
             script: |
-               sudo docker version
-               sudo docker images
+              ls -la /tmp/
+              cat /tmp/main-page.tar.gz | gunzip | docker load
+              docker images
       - name: Load and run Docker image on server
         uses: appleboy/ssh-action@master
         with:
