@@ -20,9 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build  
-
       - name: Deploy to Server
         uses: appleboy/scp-action@master
         with:
@@ -30,7 +27,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: "dist/*"  
+          source: "."  
           target: "/root/main-page" 
       - name: Build and Run Docker container
         uses: appleboy/ssh-action@master
