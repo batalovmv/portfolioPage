@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14'  # Укажите версию Node.js, которая подходит для вашего проекта
+          node-version: '14'  
 
       - name: Install dependencies
         run: npm install
@@ -31,5 +31,27 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "dist/*"  
-          target: "/root/main-page"  # Путь на удаленном сервере
+          target: "/root/main-page" 
+      - name: Build and Run Docker container
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /root/main-page
+      
+            # Останавливаем и удаляем старый контейнер, если он существует
+            docker stop my-app-container || true
+            docker rm my-app-container || true
+      
+            # Удаляем старый образ, если он существует
+            docker rmi my-app || true
+
+            # Собираем новый образ Docker из Dockerfile
+            docker build -t my-app .
+
+            # Запускаем контейнер из нового образа
+            docker run -d --name my-app-container -p 81:80 my-app      
       
