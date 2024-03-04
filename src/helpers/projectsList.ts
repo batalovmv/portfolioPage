@@ -18,11 +18,11 @@ import project06Big from "./../img/projects/06-big.jpg";
 
 const projects = [
 	{
-		title: 'Gaming streaming portal',
-		skills: 'React, Node.js, MongoDB',
+		title: 'Лента постов с лайками и комментариями',
+		skills: 'React, Redux, Node.js, MySQL, Docker, Vite, JWT-token',
 		img: project01,
 		imgBig: project01Big,
-		gitHubLink: 'https://github.com',
+        gitHubLink: 'https://github.com/batalovmv/attractor-homework_92',
 	},
 	{
 		title: 'Video service',

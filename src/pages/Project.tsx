@@ -34,7 +34,7 @@ const Project = () => {
 					</div>
 
 					{project.gitHubLink && (
-						<BtnGitHub link="https://github.com" />
+                        <BtnGitHub link="http://5.181.108.207:81/" />
 					)}
 				</div>
 			</div>
