@@ -118,6 +118,10 @@ body {
 
 	transition: opacity 0.2s ease-in;
 }
+.btn-link{
+    padding: 12px 16px;
+    margin-bottom: 5px;
+}
 
 .btn:hover {
 	opacity: 0.8;

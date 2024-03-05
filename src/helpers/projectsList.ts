@@ -23,6 +23,7 @@ const projects = [
 		img: project01,
 		imgBig: project01Big,
         gitHubLink: 'https://github.com/batalovmv/attractor-homework_92',
+        siteLink:'http://5.181.108.207:81'
 	},
 	{
 		title: 'заглушка',
@@ -30,6 +31,7 @@ const projects = [
 		imgBig: project02Big,
 		skills: 'React, PHP, MySql',
 		gitHubLink: 'https://github.com',
+        siteLink: '#'
 	},
 	{
         title: 'заглушка',
@@ -37,24 +39,28 @@ const projects = [
 		imgBig: project03Big,
 		skills: 'Vue JS, Node.js, MongoDB',
 		gitHubLink: 'https://github.com',
+        siteLink: '#'
 	},
 	{
         title: 'заглушка',
 		img: project04,
 		imgBig: project04Big,
 		skills: 'React Native',
+        siteLink: '#'
 	},
 	{
         title: 'заглушка',
 		img: project05,
 		imgBig: project05Big,
 		skills: 'HTML, SCSS, JS',
+        siteLink: '#'
 	},
 	{
         title: 'заглушка',
 		img: project06,
 		imgBig: project06Big,
 		skills: 'React, PHP, MySql',
+        siteLink: '#'
 	},
 ];
 

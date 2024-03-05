@@ -6,6 +6,7 @@ interface Project {
   imgBig: string;
   skills: string;
   gitHubLink?: string;
+  siteLink?:string;
 }
 
 const Project = () => {
@@ -32,7 +33,11 @@ const Project = () => {
 					<div className="project-details__desc">
 						<p>Skills: {project.skills}</p>
 					</div>
-
+{project.siteLink&&(
+                        <a href={project.siteLink} className="btn btn-link">
+                            Перейти на сайт
+                        </a>   
+)}
 					{project.gitHubLink && (
                         <BtnGitHub link={project.gitHubLink}/>
 					)}
