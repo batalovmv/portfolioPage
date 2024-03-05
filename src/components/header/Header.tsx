@@ -5,6 +5,7 @@ const Header = () => {
     
     return (
 		<header className="header">
+            
             <Background/>
 			<div className="header__wrapper">
                 
@@ -21,6 +22,7 @@ const Header = () => {
 					Download CV
 				</a>
 			</div>
+           
 		</header>
 	);
 }

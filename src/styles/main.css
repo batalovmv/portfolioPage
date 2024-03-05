@@ -15,10 +15,6 @@
 	--nav-border: var(--black-border);
 	--nav-text: var(--white);
 
-	/* Header */
-	--header-bg: var(--black);
-	--header-text: var(--white);
-
 	/* Footer */
 	--footer-bg: var(--black);
 	--footer-text: var(--white);
