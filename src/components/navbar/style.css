@@ -52,15 +52,3 @@
 	position: relative;
 }
 
-.nav-list__link--active::before {
-	content: '';
-
-	position: absolute;
-	left: 0;
-	top: 100%;
-
-	display: block;
-	height: 2px;
-	width: 100%;
-	background-color: var(--accent);
-}

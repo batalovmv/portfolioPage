@@ -1,4 +1,5 @@
 import Header from '../components/header/Header'
+import FadeIn from '../utils/FadeIn';
 
 const Home = () => {
     
@@ -15,10 +16,12 @@ const Home = () => {
 								HTML, CSS, NPM, Vite, MaterialUI, AntD, StyledComponents
 							</p>
 						</li>
+                        <FadeIn>
 						<li className="content-list__item">
 							<h2 className="title-2">Backend</h2>
                             <p>NodeJS, MySQL,jwt-token, Docker</p>
 						</li>
+                        </FadeIn>
 					</ul>
 				</div>
 			</main>

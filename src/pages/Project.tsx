@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom";
 import BtnGitHub from "../components/btnGitHub/BtnGitHub";
 import {projects} from "../helpers/projectsList"
+import FadeIn from "../utils/FadeIn";
 interface Project {
   title: string;
   imgBig: string;
@@ -29,18 +30,22 @@ const Project = () => {
 						alt={project.title}
 						className="project-details__cover"
 					/>
-
+<FadeIn>
 					<div className="project-details__desc">
 						<p>Skills: {project.skills}</p>
 					</div>
+                    
+                    <div className="project-buttons">
+                        
+                   
 {project.siteLink&&(
-                        <a href={project.siteLink} className="btn btn-link">
+                                <a href={project.siteLink} target="_blank"  className="btn btn-link">
                             Перейти на сайт
                         </a>   
 )}
 					{project.gitHubLink && (
                         <BtnGitHub link={project.gitHubLink}/>
-					)}
+                            )} </div></FadeIn>
 				</div>
 			</div>
 		</main>

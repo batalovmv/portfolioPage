@@ -25,6 +25,7 @@ const projects = [
         gitHubLink: 'https://github.com/batalovmv/attractor-homework_92',
         siteLink:'http://5.181.108.207:81'
 	},
+  
 	{
 		title: 'заглушка',
 		img: project02,

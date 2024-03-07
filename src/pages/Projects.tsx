@@ -1,5 +1,6 @@
 import Project from '../components/project/Project';
 import {projects} from "../helpers/projectsList"
+import FadeIn from '../utils/FadeIn';
 
 const Projects = () => {
 	return (
@@ -9,12 +10,14 @@ const Projects = () => {
 				<ul className="projects">
 					{projects.map((project, index) => {
 						return (
+                            <FadeIn>
 							<Project
 								key={index}
 								title={project.title}
 								img={project.img}
 								index={index}
 							/>
+                            </FadeIn>
 						);
 					})}
 				</ul>

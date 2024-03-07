@@ -119,7 +119,6 @@ body {
 	transition: opacity 0.2s ease-in;
 }
 .btn-link{
-    padding: 12px 16px;
     margin-bottom: 5px;
 }
 
@@ -135,18 +134,16 @@ body {
 /* Btn outline */
 
 .btn-outline {
-	display: flex;
+    display: inline-block;
 	column-gap: 10px;
-	align-items: center;
-
 	height: 48px;
-	padding: 12px 20px;
-
+    padding: 12px 16px;
+width: 188px;
 	border-radius: 5px;
 	border: 1px solid #000;
 	background-color: #fff;
 	color: #000;
-
+font-weight: 400;
 	transition: opacity 0.2s ease-in;
 }
 
@@ -169,6 +166,13 @@ body {
 	row-gap: 30px;
 }
 
+.project-buttons{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /* Project details */
