@@ -9,7 +9,7 @@ const Navbar = () => {
 		<nav className="nav">
 			<div className="container">
 				<div className="nav-row">
-					<NavLink to="/" className="logo">
+					<NavLink to="portfolioPage/" className="logo">
 						<strong>My</strong> portfolio
 					</NavLink>
 
@@ -17,14 +17,14 @@ const Navbar = () => {
 
 					<ul className="nav-list">
 						<li className="nav-list__item">
-                            <AnimatedLink name="Home" to="/" />
+                            <AnimatedLink name="Home" to="portfolioPage/" />
 						</li>
 
 						<li className="nav-list__item">
-                            <AnimatedLink name="Projects" to="/projects" />
+                            <AnimatedLink name="Projects" to="portfolioPage/projects" />
 						</li>
 						<li className="nav-list__item">
-                            <AnimatedLink name="Contacts" to="/contacts" />
+                            <AnimatedLink name="Contacts" to="portfolioPage/contacts" />
 						</li>
 					</ul>
 				</div>
