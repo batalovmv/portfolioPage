@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals.ts';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/portfolioPage">
         <App />
       </BrowserRouter>
     </Provider>

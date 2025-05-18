@@ -18,10 +18,10 @@ const App = () => (
             <Navbar />
             <Suspense fallback={<Spinner />}>
                 <Routes>
-                    <Route path="/portfolioPage/" element={<Home />} />
-                    <Route path="/portfolioPage/projects" element={<Projects />} />
-                    <Route path="/portfolioPage/project/:id" element={<Project />} />
-                    <Route path="/portfolioPage/contact" element={<Contacts />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/project/:id" element={<Project />} />
+                    <Route path="/contacts" element={<Contacts />} />
                 </Routes>
             </Suspense>
             <Footer />
