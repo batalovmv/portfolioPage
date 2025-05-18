@@ -1,1 +1,0 @@
-import{_ as i}from"./index-c32ea56a.js";async function o(a,e=!0){const{CircleDrawer:r}=await i(()=>import("./CircleDrawer-7abe2086.js"),["assets/CircleDrawer-7abe2086.js","assets/Home-967a46d0.js","assets/index-c32ea56a.js","assets/index-92672b2e.css","assets/FadeIn-1e8a3b00.js","assets/Home-c9af7bd7.css"]);await a.addShape("circle",new r,e)}export{o as loadCircleShape};
