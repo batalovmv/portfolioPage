@@ -1,0 +1,1 @@
+import{P as n}from"./PolygonDrawerBase-b1118008.js";import"./Home-3432d217.js";import"./index-0708c276.js";import"./FadeIn-d3f46469.js";const o=3.5,s=2.66,a=3;class p extends n{getCenter(t,e){return{x:-e/(t.sides/o),y:-e/(s/o)}}getSidesData(t,e){const r=t.sides;return{count:{denominator:1,numerator:r},length:e*s/(r/a)}}}export{p as PolygonDrawer};

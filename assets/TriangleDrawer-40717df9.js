@@ -1,1 +1,0 @@
-import{P as o}from"./PolygonDrawerBase-cb50a77e.js";import"./Home-0b16b12b.js";import"./index-5af487bf.js";import"./FadeIn-bec27afa.js";const n=1.66,a=3,i=2;class d extends o{getCenter(t,e){return{x:-e,y:e/n}}getSidesCount(){return a}getSidesData(t,e){const r=e*i;return{count:{denominator:2,numerator:3},length:r}}}export{d as TriangleDrawer};

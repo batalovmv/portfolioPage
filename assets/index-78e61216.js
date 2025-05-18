@@ -1,0 +1,1 @@
+import{a as i}from"./Home-3432d217.js";import"./index-0708c276.js";import"./FadeIn-d3f46469.js";async function n(){i("ease-in-quad",a=>a**2),i("ease-out-quad",a=>1-(1-a)**2),i("ease-in-out-quad",a=>a<.5?2*a**2:1-(-2*a+2)**2/2),await Promise.resolve()}export{n as loadEasingQuadPlugin};
