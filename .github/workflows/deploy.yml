@@ -1,5 +1,8 @@
 name: Build and Deploy to GitHub Pages
-
+# Даем нужные разрешения
+permissions:
+  contents: write     # позволяет пушить новые коммиты в репо
+  pages: write        # позволяет обновлять GitHub Pages
 on:
   push:
     branches:
