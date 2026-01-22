@@ -27,12 +27,12 @@ const projects = [
 	},
   
 	{
-		title: 'заглушка',
+		title: 'L5R Project Site — сайт для ролевой игры',
 		img: project02,
 		imgBig: project02Big,
-		skills: 'React, PHP, MySql',
-		gitHubLink: 'https://github.com',
-        siteLink: '#'
+		skills: 'Next.js, TypeScript, Tailwind CSS',
+		gitHubLink: 'https://github.com/batalovmv/l5r-project-site',
+        siteLink: 'https://batalovmv.github.io/l5r-project-site/'
 	},
 	{
         title: 'заглушка',
