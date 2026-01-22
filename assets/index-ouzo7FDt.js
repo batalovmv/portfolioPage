@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/BaseMover-CAN2UqI4.js","assets/Home-GWsiX7TF.js","assets/index-D29DQOdh.js","assets/index-RZRuZGb1.css","assets/FadeIn-CzB6Y-0w.js","assets/Home-GGm1Mkl9.css"])))=>i.map(i=>d[i]);
+import{_ as t}from"./index-D29DQOdh.js";async function s(a,e=!0){await a.addMover("base",async()=>{const{BaseMover:r}=await t(async()=>{const{BaseMover:o}=await import("./BaseMover-CAN2UqI4.js");return{BaseMover:o}},__vite__mapDeps([0,1,2,3,4,5]));return new r},e)}export{s as loadBaseMover};

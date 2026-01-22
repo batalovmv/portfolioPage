@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ParallaxMover-E16GKasa.js","assets/Home-GWsiX7TF.js","assets/index-D29DQOdh.js","assets/index-RZRuZGb1.css","assets/FadeIn-CzB6Y-0w.js","assets/Home-GGm1Mkl9.css"])))=>i.map(i=>d[i]);
+import{_ as e}from"./index-D29DQOdh.js";async function n(a,r=!0){await a.addMover("parallax",async()=>{const{ParallaxMover:o}=await e(async()=>{const{ParallaxMover:t}=await import("./ParallaxMover-E16GKasa.js");return{ParallaxMover:t}},__vite__mapDeps([0,1,2,3,4,5]));return new o},r)}export{n as loadParallaxMover};
