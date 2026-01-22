@@ -27,10 +27,14 @@ const projects = [
 	},
   
 	{
-		title: 'L5R Project Site — сайт для ролевой игры',
+		title: 'L5R Project Hub — приложение для ролевой игры',
 		img: project02,
 		imgBig: project02Big,
 		skills: 'Next.js, TypeScript, Tailwind CSS',
+		description:
+			'Хаб оффлайн‑приложения для L5R 5e: страница проекта с возможностями, дорожной картой и FAQ. Без серверов, аккаунтов и подписок.',
+		frontend: 'Next.js, TypeScript, Tailwind CSS',
+		backend: 'Нет серверной части (offline‑first, без аккаунтов/серверов).',
 		gitHubLink: 'https://github.com/batalovmv/l5r-project-site',
         siteLink: 'https://batalovmv.github.io/l5r-project-site/'
 	},

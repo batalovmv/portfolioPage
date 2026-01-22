@@ -6,6 +6,9 @@ interface Project {
   title: string;
   imgBig: string;
   skills: string;
+  description?: string;
+  frontend?: string;
+  backend?: string;
   gitHubLink?: string;
   siteLink?: string;
 }
@@ -29,6 +32,9 @@ const Project = () => {
           <FadeIn>
             <div className="project-details__desc">
               <p>Skills: {project.skills}</p>
+              {project.frontend && <p>Frontend: {project.frontend}</p>}
+              {project.backend && <p>Backend: {project.backend}</p>}
+              {project.description && <p>{project.description}</p>}
             </div>
 
             <div className="project-buttons">
