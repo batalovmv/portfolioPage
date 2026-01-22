@@ -1,2 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ColorUpdater-BWEAdn8x.js","assets/Home-QbNNiOjc.js","assets/index-CFMsOgPr.js","assets/index-CnYRp4af.css","assets/FadeIn-C-JDcG-e.js","assets/Home-GGm1Mkl9.css"])))=>i.map(i=>d[i]);
-import{_ as n}from"./index-CFMsOgPr.js";async function i(r,t=!0){await r.addParticleUpdater("color",async a=>{const{ColorUpdater:o}=await n(async()=>{const{ColorUpdater:e}=await import("./ColorUpdater-BWEAdn8x.js");return{ColorUpdater:e}},__vite__mapDeps([0,1,2,3,4,5]));return new o(a)},t)}export{i as loadColorUpdater};
