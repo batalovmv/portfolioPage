@@ -18,12 +18,19 @@ import project06Big from "./../img/projects/06-big.jpg";
 
 const projects = [
 	{
-		title: 'Лента постов с лайками и комментариями',
-		skills: 'React, Redux, Node.js, MySQL, Docker, Vite, JWT-token',
+		title: 'MemAlerts — мем-алерты для стримов (channel points)',
+		skills:
+			'React, TypeScript, Vite, Tailwind CSS, Redux Toolkit, Express, Socket.IO, PostgreSQL, Prisma, Redis, BullMQ',
 		img: project01,
 		imgBig: project01Big,
-        gitHubLink: 'https://github.com/batalovmv/attractor-homework_92',
-        siteLink:'http://5.181.108.207:81'
+		description:
+			'Платформа для активации мемов на стримах: зрители запускают мемы за баллы/монеты, стример управляет каталогом и настройками. Есть OBS overlay, чат-боты и real-time события.',
+		frontend:
+			'React SPA (Vite) + Tailwind CSS, Redux Toolkit, React Router, i18next, Socket.IO client, PWA',
+		backend:
+			'Node.js (TypeScript), Express, Socket.IO, PostgreSQL (Prisma), Redis (adapters/queues), BullMQ, Twitch OAuth (Passport), S3 uploads',
+        gitHubLink: 'https://github.com/batalovmv/memalerts',
+        siteLink:'https://twitchmemes.ru/'
 	},
   
 	{
