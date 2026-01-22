@@ -9,6 +9,7 @@ interface Project {
   description?: string;
   frontend?: string;
   backend?: string;
+  hub?: string;
   gitHubLink?: string;
   siteLink?: string;
 }
@@ -47,6 +48,11 @@ const Project = () => {
                 {project.backend && (
                   <p>
                     <strong>Backend:</strong> {project.backend}
+                  </p>
+                )}
+                {project.hub && (
+                  <p>
+                    <strong>Project hub:</strong> {project.hub}
                   </p>
                 )}
               </div>

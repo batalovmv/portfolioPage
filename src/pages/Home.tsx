@@ -9,16 +9,20 @@ const Home = () => {
         <div className="container">
           <ul className="content-list">
             <li className="content-list__item">
-              <h2 className="title-2">Frontend</h2>
+              <h2 className="title-2">Технологии</h2>
               <p>
-                JavaScript, TypeScript, ReactJS, Redux, HTML, CSS, NPM, Vite, MaterialUI, AntD,
-                StyledComponents
+                Стек не фиксированный: подбираю технологии под задачу и ограничения проекта (в том
+                числе с активным использованием нейросетей/AI-инструментов в разработке).
               </p>
             </li>
             <FadeIn>
               <li className="content-list__item">
-                <h2 className="title-2">Backend</h2>
-                <p>NodeJS, MySQL, jwt-token, Docker</p>
+                <h2 className="title-2">Чаще использую</h2>
+                <p>
+                  Frontend: TypeScript, React, Vite, Tailwind/CSS, UI-библиотеки по необходимости.
+                  <br />
+                  Backend: Node.js, SQL (PostgreSQL/MySQL), Docker, JWT.
+                </p>
               </li>
             </FadeIn>
           </ul>

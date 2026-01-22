@@ -36,6 +36,7 @@ const projects = [
 			'Приложение-компаньон для Legend of the Five Rings 5e: кампании, персонажи, справочник и инструменты (dice/NPC/encounters). Offline-first — все данные хранятся локально, без аккаунтов и серверов.',
 		frontend: 'React Native, Expo Router, TypeScript, Zustand',
 		backend: 'Нет: offline-first (SQLite на устройстве), без аккаунтов/серверов.',
+		hub: 'Next.js (App Router), TypeScript, Tailwind CSS',
 		gitHubLink: 'https://github.com/batalovmv/l5r',
 		siteLink: 'https://batalovmv.github.io/l5r-project-site/'
 	},
