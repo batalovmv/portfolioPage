@@ -48,12 +48,19 @@ const projects = [
 		siteLink: 'https://batalovmv.github.io/l5r-project-site/'
 	},
 	{
-        title: 'заглушка',
+        title: 'Alla Cosmetology — сайт косметолога (SPA) + админка + Telegram бот',
 		img: project03,
 		imgBig: project03Big,
-		skills: 'Vue JS, Node.js, MongoDB',
-		gitHubLink: 'https://github.com',
-        siteLink: '#'
+		skills:
+			'React, TypeScript, Vite, Firebase (Auth/Firestore/Storage), Redux Toolkit, React Router, React Hook Form, PWA, Telegram bot (grammY)',
+		description:
+			'Сайт-визитка с каталогом процедур и формами записи + полноценная админ‑панель для управления контентом и заявками. Интеграции: Firebase (Auth/Firestore/Storage + Cloud Functions) и Telegram бот для сценариев записи/уведомлений.',
+		frontend:
+			'React SPA (Vite) + TypeScript (strict), React Router, Redux Toolkit, React Hook Form, CSS Modules, lazy-loading/Suspense, PWA',
+		backend:
+			'Firebase Auth/Firestore/Storage + Cloud Functions (security rules/custom claims), Telegram bot (Node.js + TypeScript + grammY + firebase-admin + node-cron)',
+		gitHubLink: 'https://github.com/batalovmv/alla',
+        siteLink: 'https://batalovmv.github.io/alla/'
 	},
 	{
         title: 'заглушка',
