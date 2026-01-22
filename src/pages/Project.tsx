@@ -31,15 +31,35 @@ const Project = () => {
           <img src={project.imgBig} alt={project.title} className="project-details__cover" />
           <FadeIn>
             <div className="project-details__desc">
-              <p>Skills: {project.skills}</p>
-              {project.frontend && <p>Frontend: {project.frontend}</p>}
-              {project.backend && <p>Backend: {project.backend}</p>}
-              {project.description && <p>{project.description}</p>}
+              {project.description && (
+                <p className="project-details__summary">{project.description}</p>
+              )}
+
+              <div className="project-details__stack">
+                <p>
+                  <strong>Skills:</strong> {project.skills}
+                </p>
+                {project.frontend && (
+                  <p>
+                    <strong>Frontend:</strong> {project.frontend}
+                  </p>
+                )}
+                {project.backend && (
+                  <p>
+                    <strong>Backend:</strong> {project.backend}
+                  </p>
+                )}
+              </div>
             </div>
 
             <div className="project-buttons">
               {project.siteLink && (
-                <a href={project.siteLink} target="_blank" className="btn btn-link">
+                <a
+                  href={project.siteLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-link"
+                >
                   Перейти на сайт
                 </a>
               )}

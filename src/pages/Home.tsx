@@ -18,7 +18,7 @@ const Home = () => {
             <FadeIn>
               <li className="content-list__item">
                 <h2 className="title-2">Backend</h2>
-                <p>NodeJS, MySQL,jwt-token, Docker</p>
+                <p>NodeJS, MySQL, jwt-token, Docker</p>
               </li>
             </FadeIn>
           </ul>
