@@ -6,6 +6,8 @@ interface Project {
   title: string;
   imgBig: string;
   skills: string;
+  status?: string;
+  statusLabel?: string;
   description?: string;
   frontend?: string;
   backend?: string;
@@ -28,6 +30,11 @@ const Project = () => {
       <div className="container">
         <div className="project-details">
           <h1 className="title-1">{project.title}</h1>
+          {project.status === 'frozen' && (
+            <p className="project-details__status project-details__status--frozen">
+              {project.statusLabel || 'Разработка заморожена'}
+            </p>
+          )}
 
           <img src={project.imgBig} alt={project.title} className="project-details__cover" />
           <FadeIn>

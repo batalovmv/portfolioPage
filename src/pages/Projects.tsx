@@ -11,7 +11,13 @@ const Projects = () => {
           {projects.map((project, index) => {
             return (
               <FadeIn>
-                <Project key={index} title={project.title} img={project.img} index={index} />
+                <Project
+                  key={index}
+                  title={project.title}
+                  img={project.img}
+                  index={index}
+                  status={project.status}
+                />
               </FadeIn>
             );
           })}

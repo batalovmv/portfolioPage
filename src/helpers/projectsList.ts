@@ -39,6 +39,8 @@ const projects = [
 		imgBig: project02Big,
 		skills:
 			'React Native, Expo, TypeScript, SQLite (expo-sqlite), Zustand, Zod, React Hook Form',
+		status: 'frozen',
+		statusLabel: 'Разработка заморожена',
 		description:
 			'Приложение-компаньон для Legend of the Five Rings 5e: кампании, персонажи, справочник и инструменты (dice/NPC/encounters). Offline-first — все данные хранятся локально, без аккаунтов и серверов.',
 		frontend: 'React Native, Expo Router, TypeScript, Zustand',

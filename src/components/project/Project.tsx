@@ -6,8 +6,9 @@ type ProjectProp = {
   title: string;
   img: string;
   index: number;
+  status?: string;
 };
-const Project = ({ title, img, index }: ProjectProp) => {
+const Project = ({ title, img, index, status }: ProjectProp) => {
   // Анимация наведения
   const [hovered, setHovered] = useState(false);
   const scale = useSpring({
@@ -42,7 +43,12 @@ const Project = ({ title, img, index }: ProjectProp) => {
           ...click,
         }}
       >
-        <img src={img} alt={title} className="project__img" />
+        <div className="project__media">
+          {status === 'frozen' && (
+            <span className="project__badge project__badge--frozen">Разработка заморожена</span>
+          )}
+          <img src={img} alt={title} className="project__img" />
+        </div>
         <h3 className="project__title">{title}</h3>
       </animated.div>
     </NavLink>
