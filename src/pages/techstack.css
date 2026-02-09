@@ -1,0 +1,125 @@
+/* Tech Stack */
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.tech-category {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.3s ease;
+}
+
+.tech-category:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.tech-category__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-pink);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-category__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.3);
+  color: var(--text-primary);
+}
+
+/* Contacts */
+
+.contacts-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-item__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--accent-purple);
+}
+
+.contact-item__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.contact-item__value {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.contact-item__value a {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.contact-item__value a:hover {
+  color: var(--accent-pink);
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contacts-card {
+    padding: 24px;
+  }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

@@ -2,28 +2,37 @@
 
 .footer {
   margin-top: auto;
-  padding: 60px 0 50px;
-  background-color: var(--footer-bg);
-  color: var(--footer-text);
+  padding: 40px 0;
+  border-top: 1px solid var(--glass-border);
 }
 
 .footer__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 27px;
+  gap: 20px;
 }
 
-.social {
+.footer__links {
   display: flex;
-  column-gap: 30px;
+  gap: 24px;
+}
+
+.footer__link {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-.copyright {
-  font-size: 16px;
+.footer__link:hover {
+  color: var(--accent-pink);
 }
 
-.copyright p + p {
-  margin-top: 0.5em;
+.footer__copyright {
+  font-size: 13px;
+  color: var(--text-tertiary);
 }

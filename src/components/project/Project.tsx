@@ -1,57 +1,98 @@
-import { NavLink } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import './style.css';
 import { useState } from 'react';
+
 type ProjectProp = {
   title: string;
   img: string;
-  index: number;
+  skills: string;
+  description?: string;
   status?: string;
+  statusLabel?: string;
+  siteLink?: string;
+  gitHubLink?: string;
 };
-const Project = ({ title, img, index, status }: ProjectProp) => {
-  // Анимация наведения
+
+const Project = ({
+  title,
+  img,
+  skills,
+  description,
+  status,
+  statusLabel,
+  siteLink,
+  gitHubLink,
+}: ProjectProp) => {
   const [hovered, setHovered] = useState(false);
-  const scale = useSpring({
-    transform: hovered ? 'scale(1.1)' : 'scale(1)',
+  const springStyle = useSpring({
+    transform: hovered ? 'translateY(-6px)' : 'translateY(0px)',
+    boxShadow: hovered
+      ? '0 0 30px rgba(124, 58, 237, 0.2)'
+      : '0 0 0px rgba(124, 58, 237, 0)',
   });
 
-  // Анимация клика
-  const [clicked, setClicked] = useState(false);
-  const click = useSpring({
-    boxShadow: clicked ? '0px 0px 10px rgba(0, 0, 0, 0.5)' : '0px 0px 0px rgba(0, 0, 0, 0)',
-  });
-
-  const handleMouseEnter = () => setHovered(true);
-  const handleMouseLeave = () => setHovered(false);
-  const handleClick = () => {
-    setClicked(true);
-    setTimeout(() => setClicked(false), 200);
-  };
+  const skillTags = skills.split(',').map((s) => s.trim());
 
   return (
-    <NavLink
+    <animated.div
       className="project-card"
-      to={`/project/${index}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
+      style={springStyle}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      <animated.div
-        className="project"
-        style={{
-          ...scale,
-          ...click,
-        }}
-      >
-        <div className="project__media">
-          {status === 'frozen' && (
-            <span className="project__badge project__badge--frozen">Разработка заморожена</span>
+      <div className="project-card__media">
+        {status === 'frozen' && (
+          <span className="project-card__badge project-card__badge--frozen">
+            {statusLabel || 'Заморожен'}
+          </span>
+        )}
+        <img src={img} alt={title} className="project-card__img" />
+      </div>
+
+      <div className="project-card__body">
+        <h3 className="project-card__title">{title}</h3>
+
+        {description && (
+          <p className="project-card__desc">{description}</p>
+        )}
+
+        <div className="project-card__tags">
+          {skillTags.slice(0, 6).map((tag) => (
+            <span key={tag} className="project-card__tag">
+              {tag}
+            </span>
+          ))}
+          {skillTags.length > 6 && (
+            <span className="project-card__tag project-card__tag--more">
+              +{skillTags.length - 6}
+            </span>
           )}
-          <img src={img} alt={title} className="project__img" />
         </div>
-        <h3 className="project__title">{title}</h3>
-      </animated.div>
-    </NavLink>
+
+        <div className="project-card__links">
+          {siteLink && siteLink !== '#' && (
+            <a
+              href={siteLink}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn--sm"
+            >
+              Сайт
+            </a>
+          )}
+          {gitHubLink && (
+            <a
+              href={gitHubLink}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline btn-outline--sm"
+            >
+              GitHub
+            </a>
+          )}
+        </div>
+      </div>
+    </animated.div>
   );
 };
 

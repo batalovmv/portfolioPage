@@ -1,53 +1,101 @@
 /* Nav */
 
 .nav {
-  padding: 20px 0;
-  background-color: var(--nav-bg);
-  border-bottom: 1px solid var(--nav-border);
-  color: var(--nav-text);
-  letter-spacing: normal;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .nav-row {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  column-gap: 30px;
-  row-gap: 20px;
-  flex-wrap: wrap;
 }
 
 .logo {
-  margin-right: auto;
-  color: var(--nav-text);
-  font-size: 24px;
-  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: opacity 0.2s ease;
 }
 
-.logo strong {
-  font-weight: 700;
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo__accent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-list {
   display: flex;
-  flex-wrap: wrap;
-  row-gap: 10px;
   align-items: center;
-  column-gap: 40px;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
+  gap: 32px;
 }
 
 .nav-list__link {
-  color: var(--nav-text);
-  transition: opacity 0.2s ease-in;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-list__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: 1px;
+  transition: width 0.3s ease;
 }
 
 .nav-list__link:hover {
-  opacity: 0.8;
+  color: var(--text-primary);
 }
 
-.nav-list__link--active {
-  position: relative;
+.nav-list__link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 12px 0;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
+
+  .nav-list__link {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    gap: 16px;
+  }
+
+  .nav-list__link {
+    font-size: 13px;
+  }
 }

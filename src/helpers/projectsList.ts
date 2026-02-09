@@ -10,81 +10,68 @@ import project03Big from "./../img/projects/03-big.jpg";
 import project04 from "./../img/projects/04.jpg";
 import project04Big from "./../img/projects/04-big.jpg";
 
-import project05 from "./../img/projects/05.jpg";
-import project05Big from "./../img/projects/05-big.jpg";
-
-import project06 from "./../img/projects/06.jpg";
-import project06Big from "./../img/projects/06-big.jpg";
-
 const projects = [
 	{
-		title: 'MemAlerts — мем-алерты для стримов (channel points)',
+		title: 'MemAlerts — мем-алерты для стримов',
 		skills:
 			'React, TypeScript, Vite, Tailwind CSS, Redux Toolkit, Express, Socket.IO, PostgreSQL, Prisma, Redis, BullMQ',
 		img: project01,
 		imgBig: project01Big,
 		description:
-			'Платформа для активации мемов на стримах: зрители запускают мемы за баллы/монеты, стример управляет каталогом и настройками. Есть OBS overlay, чат-боты и real-time события.',
+			'Платформа для активации мемов на стримах: зрители запускают мемы за баллы/монеты, стример управляет каталогом и настройками. OBS overlay, мульти-платформенные чат-боты и real-time события.',
 		frontend:
 			'React SPA (Vite) + Tailwind CSS, Redux Toolkit, React Router, i18next, Socket.IO client, PWA',
 		backend:
-			'Node.js (TypeScript), Express, Socket.IO, PostgreSQL (Prisma), Redis (adapters/queues), BullMQ, Twitch OAuth (Passport), S3 uploads',
-        gitHubLink: 'https://github.com/batalovmv/memalerts',
-        siteLink:'https://twitchmemes.ru/'
+			'Node.js (TypeScript), Express, Socket.IO, PostgreSQL (Prisma), Redis, BullMQ, Twitch OAuth (Passport), S3',
+		gitHubLink: 'https://github.com/batalovmv/memalerts',
+		siteLink: 'https://memelab.ru/',
 	},
-  
+
 	{
-		title: 'L5R Companion — оффлайн мобильное приложение для L5R 5e',
+		title: 'L5R Companion — мобильное приложение для L5R 5e',
 		img: project02,
 		imgBig: project02Big,
 		skills:
-			'React Native, Expo, TypeScript, SQLite (expo-sqlite), Zustand, Zod, React Hook Form',
+			'React Native, Expo, TypeScript, SQLite, Zustand, Zod, React Hook Form',
 		status: 'frozen',
 		statusLabel: 'Разработка заморожена',
 		description:
-			'Приложение-компаньон для Legend of the Five Rings 5e: кампании, персонажи, справочник и инструменты (dice/NPC/encounters). Offline-first — все данные хранятся локально, без аккаунтов и серверов.',
+			'Приложение-компаньон для Legend of the Five Rings 5e: кампании, персонажи, справочник и инструменты. Offline-first — все данные локально, без аккаунтов.',
 		frontend: 'React Native, Expo Router, TypeScript, Zustand',
-		backend: 'Нет: offline-first (SQLite на устройстве), без аккаунтов/серверов.',
+		backend: 'Нет: offline-first (SQLite на устройстве)',
 		hub: 'Next.js (App Router), TypeScript, Tailwind CSS',
 		gitHubLink: 'https://github.com/batalovmv/l5r',
-		siteLink: 'https://batalovmv.github.io/l5r-project-site/'
+		siteLink: 'https://batalovmv.github.io/l5r-project-site/',
 	},
 	{
-        title: 'Alla Cosmetology — сайт косметолога (SPA) + админка + Telegram бот',
+		title: 'Alla Cosmetology — сайт косметолога + админка',
 		img: project03,
 		imgBig: project03Big,
 		skills:
-			'React, TypeScript, Vite, Firebase (Auth/Firestore/Storage), Redux Toolkit, React Router, React Hook Form, PWA, Telegram bot (grammY)',
+			'React, TypeScript, Vite, Firebase, Redux Toolkit, React Hook Form, PWA, Telegram bot (grammY)',
 		description:
-			'Сайт-визитка с каталогом процедур и формами записи + полноценная админ‑панель для управления контентом и заявками. Интеграции: Firebase (Auth/Firestore/Storage + Cloud Functions) и Telegram бот для сценариев записи/уведомлений.',
+			'Сайт-визитка с каталогом процедур и формами записи + админ-панель для управления контентом. Интеграции: Firebase и Telegram бот для уведомлений.',
 		frontend:
-			'React SPA (Vite) + TypeScript (strict), React Router, Redux Toolkit, React Hook Form, CSS Modules, lazy-loading/Suspense, PWA',
+			'React SPA (Vite), React Router, Redux Toolkit, React Hook Form, CSS Modules, PWA',
 		backend:
-			'Firebase Auth/Firestore/Storage + Cloud Functions (security rules/custom claims), Telegram bot (Node.js + TypeScript + grammY + firebase-admin + node-cron)',
+			'Firebase Auth/Firestore/Storage + Cloud Functions, Telegram bot (grammY + firebase-admin)',
 		gitHubLink: 'https://github.com/batalovmv/alla',
-        siteLink: 'https://batalovmv.github.io/alla/'
+		siteLink: 'https://batalovmv.github.io/alla/',
 	},
 	{
-        title: 'заглушка',
+		title: 'MemeLab Neiro — AI-компаньон для стримов',
 		img: project04,
 		imgBig: project04Big,
-		skills: 'React Native',
-        siteLink: '#'
-	},
-	{
-        title: 'заглушка',
-		img: project05,
-		imgBig: project05Big,
-		skills: 'HTML, SCSS, JS',
-        siteLink: '#'
-	},
-	{
-        title: 'заглушка',
-		img: project06,
-		imgBig: project06Big,
-		skills: 'React, PHP, MySql',
-        siteLink: '#'
+		skills:
+			'Python, OpenAI, Anthropic Claude, Google Gemini, edge-tts, ElevenLabs, faster-whisper, ChromaDB, OBS WebSocket',
+		description:
+			'AI-ассистент для стримеров: следит за стримом, читает чат и отвечает как настоящий зритель. Мульти-провайдерные LLM, TTS/STT, RAG с векторной БД.',
+		frontend: 'HTML, CSS, JavaScript (лендинг)',
+		backend:
+			'Python, FastAPI, OpenAI/Claude/Gemini API, edge-tts, ElevenLabs, faster-whisper, ChromaDB, OBS WebSocket',
+		gitHubLink: 'https://github.com/batalovmv/memlab-neiro',
+		siteLink: 'https://neiro-api.memelab.ru',
 	},
 ];
 
-export {projects}
+export { projects };
